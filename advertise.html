@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advertise - AdSpace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">AdSpace</a>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="advertise.html">Advertise</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Advertise Form -->
+  <section class="advertise-form">
+    <div class="container">
+      <h1>Post Your Ad</h1>
+      <form action="backend/post_ad.php" method="POST" enctype="multipart/form-data">
+        <label for="title">Ad Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter ad title" required>
+
+        <label for="description">Ad Description:</label>
+        <textarea id="description" name="description" rows="5" placeholder="Describe your ad" required></textarea>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="real-estate">Real Estate</option>
+          <option value="vehicles">Vehicles</option>
+          <option value="jobs">Jobs</option>
+          <option value="services">Services</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" placeholder="Enter price (optional)" step="0.01">
+
+        <label for="image">Upload Images:</label>
+        <input type="file" id="image" name="image[]" multiple>
+
+        <button type="submit" class="btn">Post Ad</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 AdSpace. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

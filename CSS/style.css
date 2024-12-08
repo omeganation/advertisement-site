@@ -1,0 +1,96 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  header .logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  header .menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  header .menu li {
+    margin: 0 10px;
+  }
+  
+  header .menu a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .hero {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 50px 0;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .hero .btn {
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .featured-ads {
+    padding: 30px 0;
+  }
+  
+  .featured-ads .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .featured-ads .ad {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Listings - AdSpace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">AdSpace</a>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="advertise.html">Advertise</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Ad Listings -->
+  <section class="ad-listings">
+    <div class="container">
+      <h1>Ad Listings</h1>
+      <div class="ads-grid">
+        <!-- Example Ad -->
+        <div class="ad">
+          <img src="assets/images/sample-ad.jpg" alt="Ad Image">
+          <h3>Ad Title</h3>
+          <p>Short description of the ad.</p>
+          <p><strong>Price:</strong> $100</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+
+        <!-- More ads will go here dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 AdSpace. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <div id="ads-container" class="ads-grid"></div>
+
+ <script>
+  // Fetch ads dynamically
+  fetch('backend/fetch_ads.php')
+    .then(response => response.json())
+    .then(ads => {
+        const container = document.getElementById('ads-container');
+        ads.forEach(ad => {
+            const adDiv = document.createElement('div');
+            adDiv.className = 'ad';
+            adDiv.innerHTML = `
+                <img src="${ad.image_path}" alt="Ad Image">
+                <h3>${ad.title}</h3>
+                <p>${ad.description}</p>
+                <p><strong>Price:</strong> $${ad.price}</p>
+                <a href="#" class="btn">View Details</a>
+            `;
+            container.appendChild(adDiv);
+        });
+    });
+ </script>
+
+</body>
+</html>
